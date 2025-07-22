@@ -1,6 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Fila superior -->
+    <TextView
+        android:id="@+id/txtMiNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI NOMBRE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#E91E63"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgMiNombre"
+        app:layout_constraintEnd_toEndOf="@id/imgMiNombre" />
+
+    <ImageButton
+        android:id="@+id/imgMiNombre"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mi_nombre"
+        app:layout_constraintTop_toBottomOf="@id/txtMiNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgMiEdad" />
+
+    <TextView
+        android:id="@+id/txtMiEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI EDAD"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF9800"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgMiEdad"
+        app:layout_constraintEnd_toEndOf="@id/imgMiEdad" />
+
+    <ImageButton
+        android:id="@+id/imgMiEdad"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mi_edad"
+        app:layout_constraintTop_toBottomOf="@id/txtMiEdad"
+        app:layout_constraintStart_toEndOf="@id/imgMiNombre"
+        app:layout_constraintEnd_toStartOf="@id/imgMiFamilia" />
+
+    <TextView
+        android:id="@+id/txtMiFamilia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI FAMILIA"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgMiFamilia"
+        app:layout_constraintEnd_toEndOf="@id/imgMiFamilia" />
+
+    <ImageButton
+        android:id="@+id/imgMiFamilia"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mi_familia"
+        app:layout_constraintTop_toBottomOf="@id/txtMiFamilia"
+        app:layout_constraintStart_toEndOf="@id/imgMiEdad"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fila inferior -->
+    <TextView
+        android:id="@+id/txtMiCasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI CASA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgMiNombre"
+        app:layout_constraintStart_toStartOf="@id/imgMiCasa"
+        app:layout_constraintEnd_toEndOf="@id/imgMiCasa"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgMiCasa"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mi_casa"
+        app:layout_constraintTop_toBottomOf="@id/txtMiCasa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgMiEscuela" />
+
+    <TextView
+        android:id="@+id/txtMiEscuela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI ESCUELA"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgMiEdad"
+        app:layout_constraintStart_toStartOf="@id/imgMiEscuela"
+        app:layout_constraintEnd_toEndOf="@id/imgMiEscuela"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgMiEscuela"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mi_escuela"
+        app:layout_constraintTop_toBottomOf="@id/txtMiEscuela"
+        app:layout_constraintStart_toEndOf="@id/imgMiCasa"
+        app:layout_constraintEnd_toStartOf="@id/imgMisGustos" />
+
+    <TextView
+        android:id="@+id/txtMisGustos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MIS GUSTOS"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#795548"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgMiFamilia"
+        app:layout_constraintStart_toStartOf="@id/imgMisGustos"
+        app:layout_constraintEnd_toEndOf="@id/imgMisGustos"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgMisGustos"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mis_gustos"
+        app:layout_constraintTop_toBottomOf="@id/txtMisGustos"
+        app:layout_constraintStart_toEndOf="@id/imgMiEscuela"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón de salir -->
+    <TextView
+        android:id="@+id/txtSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#666666"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/imgSalirBtn"
+        app:layout_constraintStart_toStartOf="@id/imgSalirBtn"
+        app:layout_constraintEnd_toEndOf="@id/imgSalirBtn" />
+
+    <ImageButton
+        android:id="@+id/imgSalirBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_salir_foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

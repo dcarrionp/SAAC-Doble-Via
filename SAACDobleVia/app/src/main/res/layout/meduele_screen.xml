@@ -5,216 +5,215 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:layout_editor_absoluteY="25dp">
+    android:padding="16dp">
+
+    <!-- Fila superior -->
+    <TextView
+        android:id="@+id/txtCabeza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CABEZA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgcabeza"
+        app:layout_constraintEnd_toEndOf="@id/imgcabeza" />
 
     <ImageButton
         android:id="@+id/imgcabeza"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_cabeza"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintTop_toBottomOf="@id/txtCabeza"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintEnd_toStartOf="@id/imgBoca" />
 
-    <ImageButton
-        android:id="@+id/imgEstomago"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_estomago"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.336"
-        app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/txtBoca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DIENTES"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintStart_toStartOf="@id/imgBoca"
+        app:layout_constraintEnd_toEndOf="@id/imgBoca" />
 
     <ImageButton
         android:id="@+id/imgBoca"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_muelas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtBoca"
+        app:layout_constraintStart_toEndOf="@id/imgcabeza"
+        app:layout_constraintEnd_toStartOf="@id/imgGarganta" />
+
+    <TextView
+        android:id="@+id/txtGarganta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GARGANTA"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
+        app:layout_constraintStart_toStartOf="@id/imgGarganta"
+        app:layout_constraintEnd_toEndOf="@id/imgGarganta" />
 
     <ImageButton
         android:id="@+id/imgGarganta"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_garganta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.643"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintTop_toBottomOf="@id/txtGarganta"
+        app:layout_constraintStart_toEndOf="@id/imgBoca"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fila media -->
+    <TextView
+        android:id="@+id/txtEstomago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ESTÓMAGO"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FF9800"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgcabeza"
+        app:layout_constraintStart_toStartOf="@id/imgEstomago"
+        app:layout_constraintEnd_toEndOf="@id/imgEstomago"
+        android:layout_marginTop="24dp" />
 
     <ImageButton
-        android:id="@+id/imgHuesos"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
+        android:id="@+id/imgEstomago"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_articulas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
+        android:src="@drawable/ic_estomago"
+        app:layout_constraintTop_toBottomOf="@id/txtEstomago"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintEnd_toStartOf="@id/imgEspalda" />
 
-    <ImageButton
-        android:id="@+id/imgSobreMiBtn"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_ojos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
-
-    <ImageButton
-        android:id="@+id/imgmusculos"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_musculos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.335"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+    <TextView
+        android:id="@+id/txtEspalda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ESPALDA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#795548"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgBoca"
+        app:layout_constraintStart_toStartOf="@id/imgEspalda"
+        app:layout_constraintEnd_toEndOf="@id/imgEspalda"
+        android:layout_marginTop="24dp" />
 
     <ImageButton
         android:id="@+id/imgEspalda"
-        android:layout_width="275dp"
-        android:layout_height="175dp"
-        android:adjustViewBounds="true"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_espalda"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
-
-    <ImageButton
-        android:id="@+id/imgLeve"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_dolor1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
-
-    <ImageButton
-        android:id="@+id/imgFuerte"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_dolor4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
-
-    <ImageButton
-        android:id="@+id/imgInsoportable"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_dolor5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
-
-    <ImageButton
-        android:id="@+id/imgModerado"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_dolor3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
-
-    <ImageButton
-        android:id="@+id/imgPoco"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_dolor2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintTop_toBottomOf="@id/txtEspalda"
+        app:layout_constraintStart_toEndOf="@id/imgEstomago"
+        app:layout_constraintEnd_toStartOf="@id/imgmusculos" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtMusculos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginEnd="1143dp"
-        android:layout_marginBottom="296dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Escala de dolor"
+        android:text="MÚSCULOS"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgGarganta"
+        app:layout_constraintStart_toStartOf="@id/imgmusculos"
+        app:layout_constraintEnd_toEndOf="@id/imgmusculos"
+        android:layout_marginTop="24dp" />
+
+    <ImageButton
+        android:id="@+id/imgmusculos"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_musculos"
+        app:layout_constraintTop_toBottomOf="@id/txtMusculos"
+        app:layout_constraintStart_toEndOf="@id/imgEspalda"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fila inferior -->
+    <TextView
+        android:id="@+id/txtHuesos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HUESOS"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#607D8B"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgEstomago"
+        app:layout_constraintStart_toStartOf="@id/imgHuesos"
+        app:layout_constraintEnd_toEndOf="@id/imgHuesos"
+        android:layout_marginTop="24dp" />
+
+    <ImageButton
+        android:id="@+id/imgHuesos"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_articulas"
+        app:layout_constraintTop_toBottomOf="@id/txtHuesos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón de salir -->
+    <TextView
+        android:id="@+id/txtSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#666666"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/imgSalirBtn"
+        app:layout_constraintStart_toStartOf="@id/imgSalirBtn"
+        app:layout_constraintEnd_toEndOf="@id/imgSalirBtn" />
+
+    <ImageButton
+        android:id="@+id/imgSalirBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_salir_foto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

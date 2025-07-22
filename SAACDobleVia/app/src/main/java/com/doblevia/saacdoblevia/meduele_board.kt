@@ -1,64 +1,42 @@
 package com.doblevia.saacdoblevia
 
-import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 
 class Dolor : ComponentActivity() {
-    private val mediaPlayerMap = HashMap<Int, MediaPlayer>()
-    private lateinit var activityMap: Map<Int, Intent>
+    private lateinit var ttsHelper: TTSHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.meduele_screen)
 
-        // Initialize activityMap with Intents for other activities
-        activityMap = mapOf(
+        // Inicializar TTS
+        ttsHelper = TTSHelper(this)
 
+        // Mapeo de botones con sus textos correspondientes
+        val textMap: Map<Int, String> = mapOf(
+            R.id.imgcabeza to "Me duele la cabeza",
+            R.id.imgBoca to "Me duelen los dientes",
+            R.id.imgEstomago to "Me duele el estómago",
+            R.id.imgEspalda to "Me duele la espalda",
+            R.id.imgGarganta to "Me duele la garganta",
+            R.id.imgHuesos to "Me duelen los huesos",
+            R.id.imgmusculos to "Me duelen los músculos"
         )
 
-        val audioMap = mapOf(
-            R.id.imgcabeza to R.raw.meduelecabeza,
-            R.id.imgEstomago to R.raw.medueleestomago,
-            R.id.imgGarganta to R.raw.meduelegarganta,
-            R.id.imgEspalda to R.raw.medueleespalda,
-            R.id.imgBoca to R.raw.medueledientes,
-            R.id.imgmusculos to R.raw.meduelemusculos,
-            R.id.imgHuesos to R.raw.meduelehuesos
-        )
-
-        audioMap.forEach { (buttonId, audioResId) ->
-            val mediaPlayer = MediaPlayer.create(this, audioResId)
-            mediaPlayerMap[buttonId] = mediaPlayer
-        }
-
-        // Set onClickListeners for buttons
-        val allButtonIds = (activityMap.keys + audioMap.keys).toSet()
-        allButtonIds.forEach { buttonId ->
+        // Configurar listeners para todos los botones
+        textMap.forEach { (buttonId: Int, text: String) ->
             findViewById<ImageButton>(buttonId).setOnClickListener {
-                handleButtonClick(buttonId)
+                ttsHelper.speak(text)
             }
         }
-    }
 
-    private fun handleButtonClick(buttonId: Int) {
-        mediaPlayerMap[buttonId]?.apply {
-            if (isPlaying) {
-                stop()
-                prepare()
-            }
-            start()
-        }
-        activityMap[buttonId]?.let {
-            startActivity(it)
-        }
+        // Botón de regreso (si necesitas uno, agrégalo al layout)
     }
 
     override fun onDestroy() {
-        // Release all MediaPlayers when the activity is destroyed
-        mediaPlayerMap.values.forEach { it.release() }
+        ttsHelper.shutdown()
         super.onDestroy()
     }
 }

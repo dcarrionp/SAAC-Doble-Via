@@ -2,66 +2,52 @@ package com.doblevia.saacdoblevia
 
 import android.content.Intent
 import android.os.Bundle
-import android.media.MediaPlayer
 import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 
 class Board : ComponentActivity() {
-    private val mediaPlayerMap = HashMap<Int, MediaPlayer>()
-    private lateinit var activityMap: Map<Int, Intent>
+    private lateinit var ttsHelper: TTSHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.comms_board)
 
-        activityMap = mapOf(
+        // Inicializar TTS
+        ttsHelper = TTSHelper(this)
+
+        // Mapeo de actividades
+        val activityMap = mapOf(
             R.id.imgQuieroBtn to Intent(this@Board, Quiero::class.java),
             R.id.imgEstoyBtn to Intent(this@Board, Estoy::class.java),
-            R.id.imgMeDueleBtn to Intent(this@Board, Dolor :: class.java),
-            R.id.imgSaludosBtn to Intent(this@Board, Saludos :: class.java),
-            R.id.imgSobreMiBtn to Intent (this@Board, SobreMi :: class.java),
-            R.id.imgSalirBtn to Intent (this@Board, MainActivity :: class.java)
-            // Add more button IDs and intents as needed
+            R.id.imgMeDueleBtn to Intent(this@Board, Dolor::class.java),
+            R.id.imgSaludosBtn to Intent(this@Board, Saludos::class.java),
+            R.id.imgSobreMiBtn to Intent(this@Board, SobreMi::class.java),
+            R.id.imgSalirBtn to Intent(this@Board, MainActivity::class.java)
         )
 
-        val audioMap = mapOf(
-            R.id.imgSiBtn to R.raw.si_audio,
-            R.id.imgNoBtn to R.raw.no_audio,
-            // Add more button IDs and audio files as needed
+        // Mapeo de textos para TTS
+        val textMap = mapOf(
+            R.id.imgSiBtn to "Sí",
+            R.id.imgNoBtn to "No"
         )
 
-        audioMap.forEach { (buttonId, audioResId) ->
-            val mediaPlayer = MediaPlayer.create(this, audioResId)
-            mediaPlayerMap[buttonId] = mediaPlayer
-        }
-
-        // Set onClickListeners for buttons
-        val allButtonIds = (activityMap.keys + audioMap.keys).toSet()
-        allButtonIds.forEach { buttonId ->
+        // Configurar listeners para botones de navegación
+        activityMap.forEach { (buttonId, intent) ->
             findViewById<ImageButton>(buttonId).setOnClickListener {
-                handleButtonClick(buttonId)
+                startActivity(intent)
             }
         }
-    }
 
-    private fun handleButtonClick(buttonId: Int) {
-        mediaPlayerMap[buttonId]?.apply {
-            if (isPlaying) {
-                stop()
-                prepare()
+        // Configurar listeners para botones con TTS
+        textMap.forEach { (buttonId, text) ->
+            findViewById<ImageButton>(buttonId).setOnClickListener {
+                ttsHelper.speak(text)
             }
-            start()
-        }
-        activityMap[buttonId]?.let {
-            startActivity(it)
         }
     }
 
     override fun onDestroy() {
-        // Release all MediaPlayers when the activity is destroyed
-        mediaPlayerMap.values.forEach { it.release() }
+        ttsHelper.shutdown()
         super.onDestroy()
     }
 }
-
-

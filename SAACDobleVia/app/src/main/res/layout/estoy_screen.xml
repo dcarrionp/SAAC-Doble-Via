@@ -5,5 +5,188 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:layout_editor_absoluteY="25dp"/>
+    android:padding="16dp">
+
+    <!-- Fila superior -->
+    <TextView
+        android:id="@+id/txtFeliz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FELIZ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgFeliz"
+        app:layout_constraintEnd_toEndOf="@id/imgFeliz" />
+
+    <ImageButton
+        android:id="@+id/imgFeliz"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_feliz"
+        app:layout_constraintTop_toBottomOf="@id/txtFeliz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgTriste" />
+
+    <TextView
+        android:id="@+id/txtTriste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRISTE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgTriste"
+        app:layout_constraintEnd_toEndOf="@id/imgTriste" />
+
+    <ImageButton
+        android:id="@+id/imgTriste"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_triste"
+        app:layout_constraintTop_toBottomOf="@id/txtTriste"
+        app:layout_constraintStart_toEndOf="@id/imgFeliz"
+        app:layout_constraintEnd_toStartOf="@id/imgEnojado" />
+
+    <TextView
+        android:id="@+id/txtEnojado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENOJADO"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgEnojado"
+        app:layout_constraintEnd_toEndOf="@id/imgEnojado" />
+
+    <ImageButton
+        android:id="@+id/imgEnojado"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_enojado"
+        app:layout_constraintTop_toBottomOf="@id/txtEnojado"
+        app:layout_constraintStart_toEndOf="@id/imgTriste"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fila inferior -->
+    <TextView
+        android:id="@+id/txtAsustado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ASUSTADO"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgFeliz"
+        app:layout_constraintStart_toStartOf="@id/imgAsustado"
+        app:layout_constraintEnd_toEndOf="@id/imgAsustado"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgAsustado"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_asustado"
+        app:layout_constraintTop_toBottomOf="@id/txtAsustado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgCansado" />
+
+    <TextView
+        android:id="@+id/txtCansado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANSADO"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF9800"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgTriste"
+        app:layout_constraintStart_toStartOf="@id/imgCansado"
+        app:layout_constraintEnd_toEndOf="@id/imgCansado"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgCansado"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_cansado"
+        app:layout_constraintTop_toBottomOf="@id/txtCansado"
+        app:layout_constraintStart_toEndOf="@id/imgAsustado"
+        app:layout_constraintEnd_toStartOf="@id/imgEnfermo" />
+
+    <TextView
+        android:id="@+id/txtEnfermo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENFERMO"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#795548"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgEnojado"
+        app:layout_constraintStart_toStartOf="@id/imgEnfermo"
+        app:layout_constraintEnd_toEndOf="@id/imgEnfermo"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgEnfermo"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_enfermo"
+        app:layout_constraintTop_toBottomOf="@id/txtEnfermo"
+        app:layout_constraintStart_toEndOf="@id/imgCansado"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón de salir -->
+    <TextView
+        android:id="@+id/txtSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#666666"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/imgSalirBtn"
+        app:layout_constraintStart_toStartOf="@id/imgSalirBtn"
+        app:layout_constraintEnd_toEndOf="@id/imgSalirBtn" />
+
+    <ImageButton
+        android:id="@+id/imgSalirBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_salir_foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,13 +3,189 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <!-- Fila superior -->
+    <TextView
+        android:id="@+id/txtComer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="575dp"
-        tools:layout_editor_absoluteY="260dp"
-        tools:src="@tools:sample/avatars" />
+        android:text="COMER"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgComer"
+        app:layout_constraintEnd_toEndOf="@id/imgComer" />
+
+    <ImageButton
+        android:id="@+id/imgComer"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_comer"
+        app:layout_constraintTop_toBottomOf="@id/txtComer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgBeber" />
+
+    <TextView
+        android:id="@+id/txtBeber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BEBER"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgBeber"
+        app:layout_constraintEnd_toEndOf="@id/imgBeber" />
+
+    <ImageButton
+        android:id="@+id/imgBeber"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_beber"
+        app:layout_constraintTop_toBottomOf="@id/txtBeber"
+        app:layout_constraintStart_toEndOf="@id/imgComer"
+        app:layout_constraintEnd_toStartOf="@id/imgJugar" />
+
+    <TextView
+        android:id="@+id/txtJugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JUGAR"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgJugar"
+        app:layout_constraintEnd_toEndOf="@id/imgJugar" />
+
+    <ImageButton
+        android:id="@+id/imgJugar"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_jugar"
+        app:layout_constraintTop_toBottomOf="@id/txtJugar"
+        app:layout_constraintStart_toEndOf="@id/imgBeber"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fila inferior -->
+    <TextView
+        android:id="@+id/txtDormir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DORMIR"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgComer"
+        app:layout_constraintStart_toStartOf="@id/imgDormir"
+        app:layout_constraintEnd_toEndOf="@id/imgDormir"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgDormir"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_dormir"
+        app:layout_constraintTop_toBottomOf="@id/txtDormir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgBano" />
+
+    <TextView
+        android:id="@+id/txtBano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BAÑO"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgBeber"
+        app:layout_constraintStart_toStartOf="@id/imgBano"
+        app:layout_constraintEnd_toEndOf="@id/imgBano"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgBano"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_bano"
+        app:layout_constraintTop_toBottomOf="@id/txtBano"
+        app:layout_constraintStart_toEndOf="@id/imgDormir"
+        app:layout_constraintEnd_toStartOf="@id/imgAyuda" />
+
+    <TextView
+        android:id="@+id/txtAyuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AYUDA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgJugar"
+        app:layout_constraintStart_toStartOf="@id/imgAyuda"
+        app:layout_constraintEnd_toEndOf="@id/imgAyuda"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgAyuda"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_ayuda"
+        app:layout_constraintTop_toBottomOf="@id/txtAyuda"
+        app:layout_constraintStart_toEndOf="@id/imgBano"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón de salir -->
+    <TextView
+        android:id="@+id/txtSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#666666"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/imgSalirBtn"
+        app:layout_constraintStart_toStartOf="@id/imgSalirBtn"
+        app:layout_constraintEnd_toEndOf="@id/imgSalirBtn" />
+
+    <ImageButton
+        android:id="@+id/imgSalirBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_salir_foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

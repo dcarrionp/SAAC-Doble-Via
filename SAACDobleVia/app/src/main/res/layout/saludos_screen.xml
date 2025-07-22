@@ -1,6 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Fila superior -->
+    <TextView
+        android:id="@+id/txtHola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOLA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgHola"
+        app:layout_constraintEnd_toEndOf="@id/imgHola" />
+
+    <ImageButton
+        android:id="@+id/imgHola"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_hola"
+        app:layout_constraintTop_toBottomOf="@id/txtHola"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgAdios" />
+
+    <TextView
+        android:id="@+id/txtAdios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADIÓS"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF5722"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgAdios"
+        app:layout_constraintEnd_toEndOf="@id/imgAdios" />
+
+    <ImageButton
+        android:id="@+id/imgAdios"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_adios"
+        app:layout_constraintTop_toBottomOf="@id/txtAdios"
+        app:layout_constraintStart_toEndOf="@id/imgHola"
+        app:layout_constraintEnd_toStartOf="@id/imgBuenosDias" />
+
+    <TextView
+        android:id="@+id/txtBuenosDias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUENOS DÍAS"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFD700"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgBuenosDias"
+        app:layout_constraintEnd_toEndOf="@id/imgBuenosDias" />
+
+    <ImageButton
+        android:id="@+id/imgBuenosDias"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_buenos_dias"
+        app:layout_constraintTop_toBottomOf="@id/txtBuenosDias"
+        app:layout_constraintStart_toEndOf="@id/imgAdios"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fila inferior -->
+    <TextView
+        android:id="@+id/txtBuenasNoches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUENAS NOCHES"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#3F51B5"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgHola"
+        app:layout_constraintStart_toStartOf="@id/imgBuenasNoches"
+        app:layout_constraintEnd_toEndOf="@id/imgBuenasNoches"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgBuenasNoches"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_buenas_noches"
+        app:layout_constraintTop_toBottomOf="@id/txtBuenasNoches"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgGracias" />
+
+    <TextView
+        android:id="@+id/txtGracias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GRACIAS"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgAdios"
+        app:layout_constraintStart_toStartOf="@id/imgGracias"
+        app:layout_constraintEnd_toEndOf="@id/imgGracias"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgGracias"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_gracias"
+        app:layout_constraintTop_toBottomOf="@id/txtGracias"
+        app:layout_constraintStart_toEndOf="@id/imgBuenasNoches"
+        app:layout_constraintEnd_toStartOf="@id/imgPerdon" />
+
+    <TextView
+        android:id="@+id/txtPerdon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PERDÓN"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF9800"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgBuenosDias"
+        app:layout_constraintStart_toStartOf="@id/imgPerdon"
+        app:layout_constraintEnd_toEndOf="@id/imgPerdon"
+        android:layout_marginTop="32dp" />
+
+    <ImageButton
+        android:id="@+id/imgPerdon"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_perdon"
+        app:layout_constraintTop_toBottomOf="@id/txtPerdon"
+        app:layout_constraintStart_toEndOf="@id/imgGracias"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón de salir -->
+    <TextView
+        android:id="@+id/txtSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALIR"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#666666"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/imgSalirBtn"
+        app:layout_constraintStart_toStartOf="@id/imgSalirBtn"
+        app:layout_constraintEnd_toEndOf="@id/imgSalirBtn" />
+
+    <ImageButton
+        android:id="@+id/imgSalirBtn"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_salir_foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
